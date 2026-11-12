@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A simple, private BMI calculator and body-metric companion. Check in, understand the context, and follow your measurements over time."
+    />
+    <meta name="theme-color" content="#f6f8f4" />
+    <title>Metrica — your body, in context</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Metrica home">
+        <span class="brand-mark" aria-hidden="true">m</span>
+        <span class="brand-name">metrica</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#perspective">A note on BMI</a>
+        <a class="nav-cta" href="privacy/">Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-wrap">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A calmer way to check in</p>
+          <h1>Know your numbers.<br /><span>Keep the whole picture.</span></h1>
+          <p class="hero-description">
+            A straightforward BMI calculator and body-metric log, designed to make everyday
+            check-ins feel a little more useful and a lot less overwhelming.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#calculator">Try the calculator <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="#how-it-works">Get to know Metrica <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="trust-row" aria-label="Metrica features">
+            <span><span class="check" aria-hidden="true">✓</span> No account needed</span>
+            <span><span class="check" aria-hidden="true">✓</span> Metric &amp; US units</span>
+          </div>
+        </div>
+
+        <section class="calculator-card" id="calculator" aria-labelledby="calculator-title">
+          <div class="calculator-topline">
+            <div>
+              <p class="card-eyebrow">YOUR QUICK CHECK-IN</p>
+              <h2 id="calculator-title">BMI calculator</h2>
+            </div>
+            <span class="card-step" aria-hidden="true">01</span>
+          </div>
+
+          <div class="unit-switch" role="group" aria-label="Measurement units">
+            <button type="button" class="unit-button is-active" data-unit="metric" aria-pressed="true">Metric</button>
+            <button type="button" class="unit-button" data-unit="imperial" aria-pressed="false">US</button>
+          </div>
+
+          <div class="range-field">
+            <label for="height">Height <output id="height-value" for="height">170 cm</output></label>
+            <input id="height" type="range" min="100" max="250" step="1" value="170" />
+            <div class="range-ends" aria-hidden="true"><span id="height-min">100 cm</span><span id="height-max">250 cm</span></div>
+          </div>
+
+          <div class="range-field">
+            <label for="weight">Weight <output id="weight-value" for="weight">70.0 kg</output></label>
+            <input id="weight" type="range" min="30" max="200" step="0.1" value="70" />
+            <div class="range-ends" aria-hidden="true"><span id="weight-min">30 kg</span><span id="weight-max">200 kg</span></div>
+          </div>
+
+          <div class="result-panel" aria-live="polite">
+            <div class="result-copy">
+              <p class="result-label">YOUR BMI</p>
+              <p class="result-number" id="bmi-value">24.2</p>
+            </div>
+            <div class="result-category">
+              <span class="category-dot" id="category-dot"></span>
+              <span id="bmi-category">Healthy range</span>
+            </div>
+            <div class="bmi-scale" aria-hidden="true">
+              <span class="scale-segment scale-low"></span>
+              <span class="scale-segment scale-healthy"></span>
+              <span class="scale-segment scale-high"></span>
+              <span class="scale-segment scale-obesity"></span>
+              <span class="scale-marker" id="scale-marker"></span>
+            </div>
+            <p class="result-note">A general adult screening measure — not a diagnosis.</p>
+          </div>
+          <p class="privacy-note"><span aria-hidden="true">◇</span> This calculator runs in your browser. Your numbers aren't sent anywhere.</p>
+        </section>
+      </section>
+
+      <section class="feature-strip section-wrap" id="how-it-works">
+        <div class="feature-intro">
+          <p class="eyebrow">MADE FOR REAL LIFE</p>
+          <h2>Simple enough for today.<br />Thoughtful enough for the long run.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">↗</span>
+            <h3>Check in, simply</h3>
+            <p>Enter your height and weight to get a clear BMI estimate in seconds.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon feature-icon-soft" aria-hidden="true">⌁</span>
+            <h3>Notice your trends</h3>
+            <p>Keep a local history of check-ins so patterns are easier to see than a single number.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon feature-icon-gold" aria-hidden="true">◎</span>
+            <h3>Stay in perspective</h3>
+            <p>Learn what BMI can tell you, what it leaves out, and when to ask a professional.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="perspective section-wrap" id="perspective">
+        <div class="perspective-mark" aria-hidden="true">
+          <span class="mark-ring"></span>
+          <span class="mark-center"></span>
+        </div>
+        <div class="perspective-copy">
+          <p class="eyebrow">A NUMBER ISN'T A VERDICT</p>
+          <h2>BMI is a starting point,<br />not the whole story.</h2>
+          <p>
+            BMI compares weight with height. It doesn't directly measure body fat, muscle, or
+            overall health, and it may not be a useful measure for everyone. Use it as one piece
+            of context — never as a diagnosis.
+          </p>
+          <a class="text-link" href="privacy/">Read our privacy policy <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand footer-brand" href="./" aria-label="Metrica home">
+          <span class="brand-mark" aria-hidden="true">m</span>
+          <span class="brand-name">metrica</span>
+        </a>
+        <p>Small check-ins. A little more perspective.</p>
+        <nav aria-label="Footer navigation">
+          <a href="privacy/">Privacy policy</a>
+          <a href="#calculator">BMI calculator</a>
+        </nav>
+        <span class="copyright">© <span id="current-year">2026</span> Metrica</span>
+      </div>
+    </footer>
+  </body>
+</html>
