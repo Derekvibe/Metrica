@@ -10,8 +10,8 @@ example, from the repository root:
 python -m http.server 8000 --directory website
 ```
 
-Before publishing, complete the draft policy with the publisher's legal name,
-privacy contact email, jurisdiction, effective date, and verified disclosures
-for analytics, advertising, hosting, platform services, and third-party SDKs.
+The policy lists EBY BRAND VENTURE as publisher and
+ebybrandventures@gmail.com as its privacy contact. Review platform and hosting
+provider disclosures whenever the app's services or data practices change.
 Publish the contents of this folder at the website root so the policy is
 available at `/privacy/`.
